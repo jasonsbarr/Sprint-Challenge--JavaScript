@@ -30,25 +30,42 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
+`.forEach` simply iterates over an array and performs an operation on each element of the array in place. `.map` operates on and returns a new array, leaving the original one untouched.
+
 2. What is the difference between a function and a method?
+
+A function is defined in its scope as a value by itself and is called simply by invoking it by its name or by the name of a binding to which it has been attached. A method is a function that has been defined as a property on an object and is thus invoked specifically as a member of that object.
 
 3. What is closure?
 
+Closure is when the value returned by a function, be it another function or some other value, retains a reference to the lexical scope it was invoked in because it needs something or some things from that scope in order to execute.
+
 4. Describe the four rules of the 'this' keyword.
 
+`var that = this;` // Wait, no, just kidding
+
+But seriously:
+
+  1. When referring to `this` in the global scope its value is the global object (`window` in a browser).
+  2. Whenever a function is called as an object's method with dot syntax, the object immediately proceeding the dot is `this`. I assume it works the same way with bracket notation, but I've never done that.
+  3. When using `new` with a constructor, `this` is the resulting object created by the constructor.
+  4. `this` can be explicitly bound using the `.call`, `.apply`, and `.bind` methods on `Function.prototype`.
+
 5. Why do we need super() in an extended class?
+
+`super()` calls the constructor of the superclass and links its prototype to that of the subclass similarly to what invoking `[Superclass].call(this, options)` to call another constructor and then linking prototypes via `[Subclass].prototype = Object.create([Superclass.prototype])` does, all in one operation.
 
 ## Project Set up
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add PM as collaborator on Github.
-- [ ] Clone your OWN version of Repo (Not Lambda's by mistake!).
-- [ ] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Add PM as collaborator on Github.
+- [x] Clone your OWN version of Repo (Not Lambda's by mistake!).
+- [x] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
 - [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
 - [ ] You are now ready to build this project with your preferred IDE
-- [ ] Implement the project on your Branch, committing changes regularly.
+- [x] Implement the project on your Branch, committing changes regularly.
 - [ ] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project:
